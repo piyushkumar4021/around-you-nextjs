@@ -4,10 +4,10 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className='max-w-6xl mx-auto text-center my-auto'>
-      <H1>Find events around you</H1>
+    <main className='max-w-6xl mx-auto text-center my-auto px-4'>
+      <H1 className='capitalize'>Find events around you</H1>
 
-      <p className='text-2xl mt-2 text-slate-400'>
+      <p className='text-lg md:text-2xl mt-2 text-slate-400'>
         Browser more than{' '}
         <span className='text-accent italic underline font-semibold'>
           10,000 events

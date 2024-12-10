@@ -25,13 +25,13 @@ export default function Header() {
   const activePath = usePathname();
 
   return (
-    <header className='flex justify-between items-center px-6 py-4 border-b border-b-slate-700'>
-      <Link className={`${jaroFont.className} text-2xl`} href='/'>
+    <header className='flex justify-between items-center px-3 sm:px-6 py-4 border-b border-b-slate-700'>
+      <Link className={`${jaroFont.className} text-xl md:text-2xl`} href='/'>
         AROUND YOU
       </Link>
 
       <nav>
-        <ul className='flex gap-x-5 text-slate-400'>
+        <ul className='flex text-sm md:text-base gap-x-5 text-slate-400'>
           {routes.map((route) => (
             <li
               key={route.path}
