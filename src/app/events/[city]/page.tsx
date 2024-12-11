@@ -16,7 +16,7 @@ export default async function Events({ params }: TEventsProps) {
   const events: TEvent[] = await resp.json();
 
   return (
-    <main className='flex flex-col items-center max-w-6xl mx-auto pt-8 px-4'>
+    <main className='flex flex-col items-center max-w-6xl mx-auto py-8 px-4'>
       <H1 className='mb-20'>
         {city === 'all' && 'All Events'}
         {city !== 'all' &&
