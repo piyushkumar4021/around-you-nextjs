@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import localFont from 'next/font/local';
 import { usePathname } from 'next/navigation';
-import clsx from 'clsx';
 import { motion } from 'framer-motion';
 
 const jaroFont = localFont({
@@ -35,20 +34,16 @@ export default function Header() {
           {routes.map((route) => (
             <li
               key={route.path}
-              className={clsx(
-                'hover:text-slate-100 transition-colors relative',
-                {
-                  'text-slate-100': activePath === route.path,
-                }
-              )}
+              className={`hover:text-slate-100 transition-colors relative ${
+                route.path === activePath ? 'text-slate-100' : ''
+              }`}
             >
               <Link href={route.path}>{route.name}</Link>
-
               {activePath === route.path && (
                 <motion.div
                   layoutId='active-link'
                   className='absolute -bottom-5 h-1 w-full bg-accent'
-                ></motion.div>
+                />
               )}
             </li>
           ))}

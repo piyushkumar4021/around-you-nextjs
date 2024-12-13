@@ -1,5 +1,4 @@
-import { API_URL } from '@/lib/constants';
-import { TEvent } from '@/lib/types';
+import { getEvent } from '@/lib/utils';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 
@@ -11,10 +10,7 @@ type TEventProps = {
 
 export default async function Event({ params }: TEventProps) {
   const eventSlug = params.slug;
-
-  const resp = await fetch(`${API_URL}/${eventSlug}`);
-  const event: TEvent = await resp.json();
-
+  const event = await getEvent(eventSlug);
   const date = new Date(event.date).toLocaleString('en-us', {
     day: '2-digit',
     month: 'long',
