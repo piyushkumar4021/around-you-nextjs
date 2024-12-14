@@ -1,2 +1,1 @@
-export const API_URL =
-  'https://bytegrad.com/course-assets/projects/evento/api/events';
+export const ITEMS_PER_PAGE = 6;

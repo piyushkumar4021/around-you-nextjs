@@ -1,5 +1,6 @@
 import { getEvent } from '@/lib/utils';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 
 type TEventProps = {
@@ -11,6 +12,7 @@ type TEventProps = {
 export default async function Event({ params }: TEventProps) {
   const eventSlug = params.slug;
   const event = await getEvent(eventSlug);
+  if (!event) return notFound();
   const date = new Date(event.date).toLocaleString('en-us', {
     day: '2-digit',
     month: 'long',
